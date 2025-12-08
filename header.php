@@ -23,8 +23,8 @@
     <div class="top-bar">
         <div class="container top-bar-inner">
             <div class="top-links">
-                <a href="https://www.alyka.com.au/contact" target="_blank">Contact</a>
-                <a href="https://www.alyka.com.au/about-us">About</a>
+                <a href="https://www.alyka.com.au/contact" target="_blank">Sublink 2</a>
+                <a href="https://www.alyka.com.au/about-us">Sublink 1</a>
             </div>
         </div>
     </div>
