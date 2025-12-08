@@ -8,6 +8,9 @@
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -16,8 +19,8 @@
     <div class="top-bar">
         <div class="container top-bar-inner">
             <div class="top-links">
-                <a href="/contact" target="_blank">Contact</a>
-                <a href="/careers">Careers</a>
+                <a href="#" target="_blank">Sublink 2</a>
+                <a href="#">Sublink 1</a>
             </div>
         </div>
     </div>
@@ -63,7 +66,9 @@
                     'container'      => false,
                     'menu_class'     => 'menu',
                     'depth'          => 3,
-                    'fallback_cb'    => 'wp_page_menu',
+                    'fallback_cb'    => function() { echo '<ul class="menu"><li><a href="#">Menu</a></li></ul>'; },
+                    'link_before'    => '',
+                    'link_after'     => '',
                 ) );
                 ?>
             </nav>

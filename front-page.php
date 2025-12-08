@@ -11,7 +11,7 @@ get_header();
         <div class="hero-inner container">
             <div class="hero-copy">
                 <h1>Lorem ipsum dolor sit amet, consectetur</h1>
-                <p>Simple, flexible WordPress starter. Build pages quickly with blocks and templates.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque quam tempus elit diam ante nisl, pretium. Tortor purus amet adipiscing adipiscing aliquamet adipiscing.</p>
                 <p><a class="btn" href="#">Learn More</a></p>
             </div>
             <div class="hero-image">
