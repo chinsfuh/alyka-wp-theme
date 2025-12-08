@@ -13,8 +13,17 @@
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
     
+    <div class="top-bar">
+        <div class="container top-bar-inner">
+            <div class="top-links">
+                <a href="/contact" target="_blank">Contact</a>
+                <a href="/careers">Careers</a>
+            </div>
+        </div>
+    </div>
+
     <header class="header">
-        <div class="container">
+        <div class="container header-inner">
             <div class="site-branding">
                 <?php
                 if ( has_custom_logo() ) {
@@ -35,10 +44,15 @@
                 ?>
             </div>
 
-            <nav class="primary-navigation">
+            <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">Menu</button>
+
+            <nav id="site-navigation" class="primary-navigation" role="navigation">
                 <?php
                 wp_nav_menu( array(
                     'theme_location' => 'primary',
+                    'container'      => false,
+                    'menu_class'     => 'menu',
+                    'depth'          => 3,
                     'fallback_cb'    => 'wp_page_menu',
                 ) );
                 ?>
