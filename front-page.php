@@ -1,6 +1,10 @@
 <?php
 /**
  * Front page template for Alyka theme
+ *
+ * @package Alyka
+ * @author Jeremy Chen
+ * @since 1.0.0
  */
 get_header();
 ?>

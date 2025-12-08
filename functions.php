@@ -1,6 +1,10 @@
 <?php
 /**
  * Alyka Theme Functions
+ *
+ * @package Alyka
+ * @author Jeremy Chen
+ * @since 1.0.0
  */
 
 // Enqueue styles and scripts

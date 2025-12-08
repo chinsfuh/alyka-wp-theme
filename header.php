@@ -1,6 +1,10 @@
 <?php
 /**
  * Alyka Theme Header
+ *
+ * @package Alyka
+ * @author Jeremy Chen
+ * @since 1.0.0
  */
 ?>
 <!DOCTYPE html>
@@ -15,12 +19,12 @@
 </head>
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
-    
+
     <div class="top-bar">
         <div class="container top-bar-inner">
             <div class="top-links">
-                <a href="#" target="_blank">Sublink 2</a>
-                <a href="#">Sublink 1</a>
+                <a href="https://www.alyka.com.au/contact" target="_blank">Contact</a>
+                <a href="https://www.alyka.com.au/about-us">About</a>
             </div>
         </div>
     </div>

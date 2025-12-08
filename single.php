@@ -1,6 +1,10 @@
 <?php
 /**
  * Single post template for news details
+ *
+ * @package Alyka
+ * @author Jeremy Chen
+ * @since 1.0.0
  */
 get_header();
 ?>
