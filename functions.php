@@ -1,6 +1,10 @@
 <?php
 /**
  * Alyka Theme Functions
+ *
+ * @package Alyka
+ * @author Jeremy Chen
+ * @since 1.0.0
  */
 
 // Enqueue styles and scripts
@@ -13,6 +17,13 @@ add_action( 'wp_enqueue_scripts', 'alyka_enqueue_assets' );
 // Theme support
 function alyka_theme_support() {
     add_theme_support( 'title-tag' );
+    // Allow custom logo via Customizer
+    add_theme_support( 'custom-logo', array(
+        'height'      => 80,
+        'width'       => 240,
+        'flex-height' => true,
+        'flex-width'  => true,
+    ) );
     add_theme_support( 'post-thumbnails' );
     add_theme_support( 'html5', array(
         'search-form',
