@@ -15,7 +15,19 @@ get_header();
                 <p><a class="btn" href="#">Learn More</a></p>
             </div>
             <div class="hero-image">
-                <img src="https://source.unsplash.com/1200x600/?people,office" alt="Hero image">
+                <?php
+                // Use a local hero image if the user places one at assets/images/hero.jpg|png|svg
+                $theme_path = get_template_directory();
+                $theme_uri  = get_template_directory_uri();
+                if ( file_exists( $theme_path . '/assets/images/hero.jpg' ) ) : ?>
+                    <img src="<?php echo esc_url( $theme_uri . '/assets/images/hero.jpg' ); ?>" alt="Hero image">
+                <?php elseif ( file_exists( $theme_path . '/assets/images/hero.png' ) ) : ?>
+                    <img src="<?php echo esc_url( $theme_uri . '/assets/images/hero.png' ); ?>" alt="Hero image">
+                <?php elseif ( file_exists( $theme_path . '/assets/images/hero.svg' ) ) : ?>
+                    <img src="<?php echo esc_url( $theme_uri . '/assets/images/hero.svg' ); ?>" alt="Hero image">
+                <?php else : ?>
+                    <img src="https://source.unsplash.com/1200x600/?people,office" alt="Hero image">
+                <?php endif; ?>
             </div>
         </div>
     </section>

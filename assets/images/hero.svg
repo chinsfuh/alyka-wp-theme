@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="600" viewBox="0 0 1400 600" role="img" aria-label="Hero image placeholder">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0%" stop-color="#f3f6f7"/>
+      <stop offset="100%" stop-color="#dfe9eb"/>
+    </linearGradient>
+    <style>
+      .title{font-family:Arial, Helvetica, sans-serif; font-size:40px; fill:#243138}
+      .sub{font-size:18px; fill:#55686b}
+    </style>
+  </defs>
+  <rect width="1400" height="600" fill="url(#g)"/>
+  <g transform="translate(60,60)">
+    <rect x="0" y="0" width="720" height="480" rx="6" fill="#ffffff" opacity="0.08"/>
+    <text x="20" y="80" class="title">Lorem ipsum dolor sit amet, consectetur</text>
+    <text x="20" y="120" class="sub">Simple, flexible WordPress starter. Build pages quickly with blocks and templates.</text>
+  </g>
+</svg>

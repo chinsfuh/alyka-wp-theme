@@ -26,19 +26,29 @@
         <div class="container header-inner">
             <div class="site-branding">
                 <?php
-                if ( has_custom_logo() ) {
+                // Prefer the Custom Logo if set in Customizer
+                if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
                     the_custom_logo();
                 } else {
-                    ?>
-                    <h1 class="site-title">
-                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-                            <?php bloginfo( 'name' ); ?>
-                        </a>
-                    </h1>
-                    <?php
-                    $description = get_bloginfo( 'description' );
-                    if ( $description ) {
-                        echo '<p class="site-description">' . esc_html( $description ) . '</p>';
+                    // Fallback to a logo file inside the theme if the user uploads assets
+                    $theme_path = get_template_directory();
+                    $theme_uri  = get_template_directory_uri();
+                    if ( file_exists( $theme_path . '/assets/images/logo.svg' ) ) {
+                        echo '<a class="custom-logo-link" href="' . esc_url( home_url( '/' ) ) . '"><img src="' . esc_url( $theme_uri . '/assets/images/logo.svg' ) . '" alt="' . esc_attr( get_bloginfo( 'name' ) ) . '"></a>';
+                    } elseif ( file_exists( $theme_path . '/assets/images/logo.png' ) ) {
+                        echo '<a class="custom-logo-link" href="' . esc_url( home_url( '/' ) ) . '"><img src="' . esc_url( $theme_uri . '/assets/images/logo.png' ) . '" alt="' . esc_attr( get_bloginfo( 'name' ) ) . '"></a>';
+                    } else {
+                        ?>
+                        <h1 class="site-title">
+                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                                <?php bloginfo( 'name' ); ?>
+                            </a>
+                        </h1>
+                        <?php
+                        $description = get_bloginfo( 'description' );
+                        if ( $description ) {
+                            echo '<p class="site-description">' . esc_html( $description ) . '</p>';
+                        }
                     }
                 }
                 ?>
