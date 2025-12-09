@@ -1,36 +1,60 @@
 <?php
 /**
- * The template for displaying the 404 template in the Twenty Twenty theme.
+ * The template for displaying 404 pages (not found)
  *
- * @package WordPress
- * @subpackage Twenty_Twenty
- * @since Twenty Twenty 1.0
+ * @link https://codex.wordpress.org/Creating_an_Error_404_Page
+ *
+ * @package alyka
  */
 
 get_header();
 ?>
 
-<main id="site-content">
+	<main id="primary" class="site-main">
 
-	<div class="section-inner thin error404-content">
+		<section class="error-404 not-found">
+			<header class="page-header">
+				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'alyka' ); ?></h1>
+			</header><!-- .page-header -->
 
-		<h1 class="entry-title"><?php _e( 'Page Not Found', 'twentytwenty' ); ?></h1>
+			<div class="page-content">
+				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'alyka' ); ?></p>
 
-		<div class="intro-text"><p><?php _e( 'The page you were looking for could not be found. It might have been removed, renamed, or did not exist in the first place.', 'twentytwenty' ); ?></p></div>
+					<?php
+					get_search_form();
 
-		<?php
-		get_search_form(
-			array(
-				'aria_label' => __( '404 not found', 'twentytwenty' ),
-			)
-		);
-		?>
+					the_widget( 'WP_Widget_Recent_Posts' );
+					?>
 
-	</div><!-- .section-inner -->
+					<div class="widget widget_categories">
+						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'alyka' ); ?></h2>
+						<ul>
+							<?php
+							wp_list_categories(
+								array(
+									'orderby'    => 'count',
+									'order'      => 'DESC',
+									'show_count' => 1,
+									'title_li'   => '',
+									'number'     => 10,
+								)
+							);
+							?>
+						</ul>
+					</div><!-- .widget -->
 
-</main><!-- #site-content -->
+					<?php
+					/* translators: %1$s: smiley */
+					$alyka_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'alyka' ), convert_smilies( ':)' ) ) . '</p>';
+					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$alyka_archive_content" );
 
-<?php get_template_part( 'template-parts/footer-menus-widgets' ); ?>
+					the_widget( 'WP_Widget_Tag_Cloud' );
+					?>
+
+			</div><!-- .page-content -->
+		</section><!-- .error-404 -->
+
+	</main><!-- #main -->
 
 <?php
 get_footer();
