@@ -4,9 +4,9 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Alyka
- * @author Jeremy Chen
- * @since Alyka 1.0
+ * @package WordPress
+ * @subpackage Twenty_Twenty
+ * @since Twenty Twenty 1.0
  */
 
 get_header();
