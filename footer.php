@@ -1,70 +1,53 @@
 <?php
 /**
- * The template for displaying the footer
- *
- * Contains the opening of the #site-footer div and all content after.
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ * Alyka Theme Footer
  *
  * @package Alyka
  * @author Jeremy Chen
- * @since Alyka 1.0
+ * @since 1.0.0
  */
 
 ?>
-			<footer id="site-footer" class="header-footer-group">
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-grid">
+                    <div class="footer-col footer-nav">
+                        <h4>Site Map</h4>
+                        <ul>
+                            <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a></li>
+                            <li><a href="<?php echo esc_url( home_url( '/about' ) ); ?>">About</a></li>
+                            <li><a href="<?php echo esc_url( home_url( '/news' ) ); ?>">News</a></li>
+                            <li><a href="<?php echo esc_url( home_url( '/contact' ) ); ?>">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col footer-contact">
+                        <h4>Contact Details</h4>
+                        <p>146 Colin Street, West Perth WA 6005</p>
+                        <p>P: 08 9200 4429</p>
+                        <p>E: <a href="mailto:home@alyka.com.au">home@alyka.com.au</a></p>
+                    </div>
+                    <div class="footer-col footer-brand">
+                        <div class="footer-logo">
+                            <?php if ( has_custom_logo() ) {
+                                the_custom_logo();
+                            } else {
+                                echo '<strong>' . get_bloginfo( 'name' ) . '</strong>';
+                            } ?>
+                        </div>
+                        <p class="footer-tagline">Find Us On Social Media</p>
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com/Alykadigital" target="_blank">Facebook</a> ·
+                            <a href="https://www.linkedin.com/company/alyka" target="_blank">LinkedIn</a> ·
+                            <a href="https://www.instagram.com/alykadigital" target="_blank">Instagram</a>
+                        </div>
+                    </div>
+                </div>
+                <p class="site-copyright">&copy; <?php echo esc_html( date( 'Y' ) ); ?> <?php bloginfo( 'name' ); ?>. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
-				<div class="section-inner">
-
-					<div class="footer-credits">
-
-						<p class="footer-copyright">&copy;
-							<?php
-							/* translators: Copyright date format, see https://www.php.net/manual/datetime.format.php */
-							$date_format = _x( 'Y', 'copyright date format', 'twentytwenty' );
-							if ( function_exists( 'wp_date' ) ) {
-								echo wp_date( $date_format );
-							} else {
-								echo date_i18n( $date_format );
-							}
-							?>
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
-						</p><!-- .footer-copyright -->
-
-						<?php
-						if ( function_exists( 'the_privacy_policy_link' ) ) {
-							the_privacy_policy_link( '<p class="privacy-policy">', '</p>' );
-						}
-						?>
-
-						<p class="powered-by-wordpress">
-							<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'twentytwenty' ) ); ?>">
-								<?php _e( 'Powered by WordPress', 'twentytwenty' ); ?>
-							</a>
-						</p><!-- .powered-by-wordpress -->
-
-					</div><!-- .footer-credits -->
-
-					<a class="to-the-top" href="#site-header">
-						<span class="to-the-top-long">
-							<?php
-							/* translators: %s: HTML character for up arrow. */
-							printf( __( 'To the top %s', 'twentytwenty' ), '<span class="arrow" aria-hidden="true">&uarr;</span>' );
-							?>
-						</span><!-- .to-the-top-long -->
-						<span class="to-the-top-short">
-							<?php
-							/* translators: %s: HTML character for up arrow. */
-							printf( __( 'Up %s', 'twentytwenty' ), '<span class="arrow" aria-hidden="true">&uarr;</span>' );
-							?>
-						</span><!-- .to-the-top-short -->
-					</a><!-- .to-the-top -->
-
-				</div><!-- .section-inner -->
-
-			</footer><!-- #site-footer -->
-
-		<?php wp_footer(); ?>
-
-	</body>
+    <?php wp_footer(); ?>
+</body>
 </html>
