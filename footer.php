@@ -6,6 +6,7 @@
  * @author Jeremy Chen
  * @since 1.0.0
  */
+
 ?>
     <footer class="footer">
         <div class="container">
